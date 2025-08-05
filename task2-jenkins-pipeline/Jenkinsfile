@@ -13,8 +13,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building Docker image: ${IMAGE_NAME}"
-                // Build the Docker image from the Dockerfile in the current directory
-                sh "docker build -t ${IMAGE_NAME} ."
+                // Build the Docker image from the Dockerfile in the nodejs-demo-app directory
+                sh "docker build -t ${IMAGE_NAME} ./nodejs-demo-app"
             }
         }
 
