@@ -1,0 +1,62 @@
+Terraform will perform the following actions:
+
+  # docker_container.nginx_container will be destroyed
+  - resource "docker_container" "nginx_container" {
+      - attach           = false -> null
+      - command          = [
+          - "nginx",
+          - "-g",
+          - "daemon off;",
+        ] -> null
+      - entrypoint       = [
+          - "/docker-entrypoint.sh",
+        ] -> null
+      - env              = [] -> null
+      - hostname         = "a728e6a1fbe1" -> null
+      - id               = "a728e6a1fbe1c7b80537024f2316213763f3531b67e436791e84d5a413f28d58" -> null
+      - image            = "sha256:e3ed3e248232914416de6d0d43a055de7403166820f7797b41198b1eef7cf8d1" -> null
+      - log_driver       = "json-file" -> null
+      - logs             = false -> null
+      - must_run         = true -> null
+      - name             = "my-nginx-container" -> null
+      - read_only        = false -> null
+      - remove_volumes   = true -> null
+      - restart          = "no" -> null
+      - rm               = false -> null
+      - security_opts    = [] -> null
+      - start            = true -> null
+      - stdin_open       = false -> null
+      - tty              = false -> null
+
+      - ports {
+          - external = 8080 -> null
+          - internal = 80 -> null
+          - ip       = "0.0.0.0" -> null
+          - protocol = "tcp" -> null
+        }
+    }
+
+  # docker_image.nginx will be destroyed
+  - resource "docker_image" "nginx" {
+      - id           = "sha256:e3ed3e248232914416de6d0d43a055de7403166820f7797b41198b1eef7cf8d1nginx:latest" -> null
+      - image_id     = "sha256:e3ed3e248232914416de6d0d43a055de7403166820f7797b41198b1eef7cf8d1" -> null
+      - keep_locally = false -> null
+      - latest       = "sha256:e3ed3e248232914416de6d0d43a055de7403166820f7797b41198b1eef7cf8d1" -> null
+      - name         = "nginx:latest" -> null
+      - repo_digest  = "nginx@sha256:b46db3dd616234f41b17a3977a45df3e595e7c527027c653303e4a0553de5a89" -> null
+    }
+
+Plan: 0 to add, 0 to change, 2 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+docker_container.nginx_container: Destroying... [id=a728e6a1fbe1c7b80537024f2316213763f3531b67e436791e84d5a413f28d58]
+docker_container.nginx_container: Destruction complete after 0s
+docker_image.nginx: Destroying... [id=sha256:e3ed3e248232914416de6d0d43a055de7403166820f7797b41198b1eef7cf8d1nginx:latest]
+docker_image.nginx: Destruction complete after 0s
+
+Destroy complete! Resources: 2 destroyed.
